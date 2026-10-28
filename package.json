@@ -5,17 +5,17 @@
   "description": "Docker Compose management plugin for Cockpit",
   "author": "RXTX4816",
   "license": "AGPL-3.0-only",
-  "homepage": "https://github.com/RXTX4816/cockpit-compose",
+  "homepage": "https://github.com/averyfreeman/cockpit-podman-docker-compose",
   "repository": {
     "type": "git",
-    "url": "https://github.com/RXTX4816/cockpit-compose.git"
+    "url": "https://github.com/averyfreeman/cockpit-podman-docker-compose.git"
   },
   "scripts": {
     "build": "node scripts/build.mjs && node scripts/i18n-coverage.mjs",
     "watch": "node scripts/watch.mjs",
     "pretypecheck": "node scripts/ensure-notices.mjs",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint src/",
+    "lint": "oxlint src/",
     "test": "NODE_OPTIONS='--max-old-space-size=8192 --disable-warning=ExperimentalWarning' vitest run",
     "test:watch": "NODE_OPTIONS='--disable-warning=ExperimentalWarning' vitest",
     "test:coverage": "NODE_OPTIONS='--max-old-space-size=8192 --disable-warning=ExperimentalWarning' vitest run --coverage",
@@ -24,28 +24,30 @@
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
     "test:e2e:codegen": "playwright codegen",
-    "base:add": "echo '⚠ Run `yalc push` in cockpit-plugin-base-react first' && yalc add @rxtx4816/cockpit-plugin-base-react && npm install",
+    "base:add": "echo '\u26a0 Run `yalc push` in cockpit-plugin-base-react first' && yalc add @rxtx4816/cockpit-plugin-base-react && npm install",
     "base:reset": "yalc retreat --all && npm install"
   },
   "devDependencies": {
-    "@patternfly/react-core": "^6.6.2",
+    "@patternfly/react-core": "6.7.0",
+    "@patternfly/react-icons": "6.7.0",
     "@playwright/test": "^1.64.0",
     "@rxtx4816/cockpit-plugin-base-react": "^2.3.0",
     "@testing-library/jest-dom": "^7.0.1",
     "@testing-library/react": "^16.3.3",
-    "@types/react": "^19.3.0",
-    "@types/react-dom": "^19.3.0",
-    "@vitest/coverage-v8": "^4.1.12",
-    "esbuild": "^0.28.2",
-    "eslint": "^9.39.4",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitest/coverage-v8": "5.0.5",
+    "esbuild": "0.28.2",
     "jsdom": "^30.1.2",
-    "react": "^19.3.0",
-    "react-dom": "^19.3.0",
-    "typescript": "^6.0.3",
-    "vitest": "^4.1.12"
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "scheduler": "0.27.0",
+    "typescript": "6.0.3",
+    "vitest": "5.0.5",
+    "oxlint": "1.90.0"
   },
   "engines": {
-    "node": ">=22.0.0"
+    "node": ">=24"
   },
   "keywords": [
     "cockpit",

@@ -1,9 +1,9 @@
 # Cockpit Docker/Podman Compose Plugin
 
-[![CI](https://github.com/RXTX4816/cockpit-compose/actions/workflows/ci.yml/badge.svg)](https://github.com/RXTX4816/cockpit-compose/actions/workflows/ci.yml)
-[![Packaging](https://github.com/RXTX4816/cockpit-compose/actions/workflows/pkg-ci.yml/badge.svg)](https://github.com/RXTX4816/cockpit-compose/actions/workflows/pkg-ci.yml)
+[![CI](https://github.com/averyfreeman/cockpit-podman-docker-compose/actions/workflows/ci.yml/badge.svg)](https://github.com/averyfreeman/cockpit-podman-docker-compose/actions/workflows/ci.yml)
+[![Packaging](https://github.com/averyfreeman/cockpit-podman-docker-compose/actions/workflows/pkg-ci.yml/badge.svg)](https://github.com/averyfreeman/cockpit-podman-docker-compose/actions/workflows/pkg-ci.yml)
 
-Docker and Podman Compose management for [Cockpit](https://cockpit-project.org) — start, stop, and monitor your stacks from a clean web UI.
+A maintained fork of [RXTX4816/cockpit-compose](https://github.com/RXTX4816/cockpit-compose), for managing Docker and Podman Compose stacks from [Cockpit](https://cockpit-project.org).
 
 ![Screenshot](docs/assets/overview.png)
 
@@ -20,7 +20,7 @@ Docker and Podman Compose management for [Cockpit](https://cockpit-project.org) 
 | **Maintain** | Prune per stack or host-wide, backup and restore as `.bak.tar.gz` |
 | **Runtimes** | Docker and Podman, rootless and rootful, switchable when both exist |
 
-Each feature is described in the [wiki](https://github.com/RXTX4816/cockpit-compose/wiki).
+Each feature is described in the [wiki](docs/wiki/Home.md).
 
 ## Requirements
 
@@ -31,6 +31,8 @@ Cockpit ships with Fedora and most RHEL-based systems; elsewhere, install it and
 
 ## Installation
 
+The prebuilt packages below are from the original project and do not include changes made in this fork.
+
 **Arch Linux**
 
 ```bash
@@ -40,14 +42,14 @@ paru -S cockpit-compose
 **Fedora / RHEL / CentOS Stream / openSUSE**
 
 ```bash
-curl -LO https://github.com/RXTX4816/cockpit-compose/releases/latest/download/cockpit-compose-latest.rpm
+curl -LO https://github.com/averyfreeman/cockpit-podman-docker-compose/releases/latest/download/cockpit-compose-latest.rpm
 sudo rpm -i cockpit-compose-latest.rpm
 ```
 
 **Debian / Ubuntu / Linux Mint / Pop!\_OS**
 
 ```bash
-curl -LO https://github.com/RXTX4816/cockpit-compose/releases/latest/download/cockpit-compose-latest.deb
+curl -LO https://github.com/averyfreeman/cockpit-podman-docker-compose/releases/latest/download/cockpit-compose-latest.deb
 sudo apt install ./cockpit-compose-latest.deb
 ```
 
@@ -55,8 +57,8 @@ sudo apt install ./cockpit-compose-latest.deb
 <summary><b>Manual install</b></summary>
 
 ```bash
-curl -LO https://github.com/RXTX4816/cockpit-compose/releases/latest/download/cockpit-compose-latest.tar.gz
-curl -LO https://github.com/RXTX4816/cockpit-compose/releases/latest/download/cockpit-compose-latest.tar.gz.sha256
+curl -LO https://github.com/averyfreeman/cockpit-podman-docker-compose/releases/latest/download/cockpit-compose-latest.tar.gz
+curl -LO https://github.com/averyfreeman/cockpit-podman-docker-compose/releases/latest/download/cockpit-compose-latest.tar.gz.sha256
 sha256sum -c cockpit-compose-latest.tar.gz.sha256
 tar -xzf cockpit-compose-latest.tar.gz
 sudo mkdir -p /usr/share/cockpit/cockpit-compose
@@ -82,7 +84,7 @@ To add a language, copy `src/i18n/locales/en.json`, translate the values, and re
 ## Development
 
 ```bash
-git clone https://github.com/RXTX4816/cockpit-compose.git
+git clone https://github.com/averyfreeman/cockpit-podman-docker-compose.git
 cd cockpit-compose
 npm install
 npm run build
@@ -90,11 +92,11 @@ npm run build
 
 Requires Node.js 22+. Built on [`@rxtx4816/cockpit-plugin-base-react`](https://github.com/RXTX4816/cockpit-plugin-base-react). See [CONTRIBUTING.md](CONTRIBUTING.md) for live reload, tests, commit conventions and working on the base library, and [VM Testing](docs/wiki/VM-Testing.md) for the QEMU test VMs.
 
-Bugs and feature requests go to [GitHub Issues](https://github.com/RXTX4816/cockpit-compose/issues). Security issues: please report privately — see [SECURITY.md](SECURITY.md).
+Bugs and feature requests go to [GitHub Issues](https://github.com/averyfreeman/cockpit-podman-docker-compose/issues). Security issues: please report privately — see [SECURITY.md](SECURITY.md).
 
 ## Versioning
 
-Releases follow [semantic versioning](https://semver.org): patch releases fix bugs, minor releases add features, and anything that breaks existing setups waits for a new major version. See [Releases](https://github.com/RXTX4816/cockpit-compose/releases) for what changed in each version.
+Releases follow [semantic versioning](https://semver.org): patch releases fix bugs, minor releases add features, and anything that breaks existing setups waits for a new major version. See [Releases](https://github.com/averyfreeman/cockpit-podman-docker-compose/releases) for what changed in each version.
 
 ## License
 
